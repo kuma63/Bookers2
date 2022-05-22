@@ -15,7 +15,9 @@
 
    <div class="row">
     <% if user.id == current_user.id %>
-    <p><%= link_to "プロフィール編集", edit_user_path(user),class: "btn btn-outline-secondary" %></p>
+     <%= link_to URL, edit_user_path(user),class: "btn btn-outline-secondary", method: :get do %>
+      <i class="fa-solid fa-user-gear"></i>
+     <% end %>
     <% end %>
    </div>
 

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def index
+   @book=Book.new
    @user=current_user
    @users=User.all
   end
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
   def edit
    @user=User.find(params[:id])
    if @user.id != current_user.id
-    redirect_to books_path
+    redirect_to user_path(current_user.id)
    end
   end
 
